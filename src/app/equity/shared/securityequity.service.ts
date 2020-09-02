@@ -12,13 +12,13 @@ export class SecurityequityService {
 
 
   constructor(private http:HttpClient) { }
-
+  selectactivity():Observable<any[]>{
+    return this.http.get<any>(this.Equityurl+'/equity/activity/');
+  }
   selectequity():Observable<any[]>{
     return this.http.get<any>(this.Equityurl+'/equity');
   }
-  selectactivity():Observable<any[]>{
-    return this.http.get<any>(this.Equityurl+'/equity/activity');
-  }
+
 
   updateequity(formdata:Securityequity){
     return this.http.put(this.Equityurl+'/equity',formdata);

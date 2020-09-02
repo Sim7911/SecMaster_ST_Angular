@@ -11,7 +11,7 @@ import {Securityequity} from '../shared/securityequity.model';
 export class EquitytileComponent implements OnInit {
   
   constructor(private service1:SecurityequityService) { }
-  activity:any=[];
+  activitylist:any=[];
 
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class EquitytileComponent implements OnInit {
 
   refreshactivity(){
     this.service1.selectactivity().subscribe(data1=>{
-      this.activity=data1;
+      this.activitylist=data1;
     });
   }
 }
